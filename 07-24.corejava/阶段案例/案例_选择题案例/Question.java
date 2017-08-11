@@ -1,7 +1,7 @@
 package 案例_选择题案例;
 
 //JavaBean
-public class Question {
+public abstract class Question {
 
 	protected String title;
 	protected Option[] options;
@@ -41,9 +41,7 @@ public class Question {
 		this.type = type;
 	}
 
-	// 父类定义 , 但由子类来实现真正的检验方式
-	public boolean check(char[] customerChoice) {
-		return false;
-	}
+	// 行为也可以是抽象的   定义名称 参数等  但不要详细的说明内容
+	public abstract boolean check(char[] customerChoice) ;
 
 }
