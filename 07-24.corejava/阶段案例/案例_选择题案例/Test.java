@@ -1,11 +1,16 @@
 package 案例_选择题案例;
 
 import 案例_选择题案例.answer.Answer;
+import 案例_选择题案例.answer.BlankAnswer;
 import 案例_选择题案例.answer.ChoiceAnswer;
 import 案例_选择题案例.question.ChoiceQuestion;
+import 案例_选择题案例.question.BlankQuestion;
 import 案例_选择题案例.question.MultiQuestion;
+import 案例_选择题案例.question.Question;
 import 案例_选择题案例.question.SingleQuestion;
 import 案例_选择题案例.question.support.Option;
+import 案例_选择题案例.service.CheckService;
+import 案例_选择题案例.service.InvokeService;
 
 public class Test {
 
@@ -23,7 +28,7 @@ public class Test {
 		//代表  此题的正确答案是 D
 		char singleAnswer = 'D';
 
-		ChoiceQuestion s1 = new SingleQuestion(t1, sOptions , 0, singleAnswer);
+		ChoiceQuestion s1 = new SingleQuestion(t1, sOptions , singleAnswer);
 		
 		////////////////////////////////////////////	//第一题  构造完成
 
@@ -37,28 +42,44 @@ public class Test {
 		//正确答案的数组 
 		char[] multiAnswer = { 'A', 'B' };
 
-		//多选题构造完毕
-		ChoiceQuestion m1 = new MultiQuestion(t2, mOptions , 1 , multiAnswer);
+		ChoiceQuestion m1 = new MultiQuestion(t2, mOptions , multiAnswer); //多选题构造完毕
+		
+		//////////////////////////////
+		
+		//填空题(1)
+		String s3 = "请求提交有_____ , ______ 两种方式 ? " ; 
+		BlankQuestion b1 = new BlankQuestion(s3, "post" , "get");
+		//填空题(2)
+		String s4 = "面向对象的三个特征是_____ , _____ , ______ . " ; 
+		BlankQuestion b2 = new BlankQuestion(s4, "封装" , "继承" , "多态");
 
 		/////////////// 题目
-		ChoiceQuestion[] questions = { s1, m1 };
+		Question[] questions = { s1 , m1 , b1 , b2};
 
 		///////////
 		// 答案
 		Answer answer1 = new ChoiceAnswer(new char[] {'D'});
-		Answer answer2 = new ChoiceAnswer(new char[] {'B' , 'A' , 'C'});
-		Answer[] answers = {answer1 , answer2 };
+		Answer answer2 = new ChoiceAnswer(new char[] {'B' , 'A' });
+		String[] contents1 = {"get" , "post"}; 
+		String[] contents2 = {"封装" , "继承" , "多态" }; 
+		Answer answer3 = new BlankAnswer(contents1);
+		Answer answer4 = new BlankAnswer(contents2);
+		
+		Answer[] answers = {answer1 , answer2 , answer3 , answer4};
 		
 
-		/////////////////////
-		// 显示题目
-//		QuestionHandler handler = new QuestionHandler();
-//		handler.showQuestion(questions);
-
-		/////////////////////
-
-//		System.out.println("检测结果");
-//		handler.doChoiceCheck(questions, answers);
+		
+		InvokeService invoke = new InvokeService();
+		invoke.init(questions);
+		
+		System.out.println(" \n开始判卷\n  ");
+		
+		CheckService check = new CheckService(questions , answers);
+		
+		check.mark();
+		
+		System.out.println("总成绩为 : " + check.getScore());
+		
 
 	}
 

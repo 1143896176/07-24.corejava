@@ -6,9 +6,9 @@ public class SingleQuestion extends ChoiceQuestion {
 	
 	public char answer; //ÕýÈ·´ð°¸
 	
-	public SingleQuestion(String title , Option[] options , int type , char answer) {
+	public SingleQuestion(String title , Option[] options  , char answer) {
 		
-		super(title , options , type);
+		super(title , options);
 		this.answer = answer;
 		
 	}
@@ -20,12 +20,11 @@ public class SingleQuestion extends ChoiceQuestion {
 	public void setAnswer(char answer) {
 		this.answer = answer;
 	}
+
+
 	
 	
-	public boolean check(char[] customerChoice) {
-		
-		return this.answer == customerChoice[0] ? true : false;
-	}
+	
 	
 
 }

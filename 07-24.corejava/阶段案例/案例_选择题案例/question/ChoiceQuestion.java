@@ -7,12 +7,11 @@ public abstract class ChoiceQuestion extends Question{
 
 	
 	protected Option[] options;
-	protected int type; // 案例中 没用到 type , 0 = 单选 , 1 = 多选
 
-	public ChoiceQuestion(String title, Option[] options, int type) {
+	public ChoiceQuestion(String title, Option[] options) {
 		super(title);
 		this.options = options;
-		this.type = type;
+	
 	}
 
 	public String getTitle() {
@@ -31,15 +30,6 @@ public abstract class ChoiceQuestion extends Question{
 		this.options = options;
 	}
 
-	public int getType() {
-		return type;
-	}
 
-	public void setType(int type) {
-		this.type = type;
-	}
-
-	// 行为也可以是抽象的   定义名称 参数等  但不要详细的说明内容
-	public abstract boolean check(char[] customerChoice) ;
 
 }

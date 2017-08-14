@@ -1,58 +1,46 @@
 package 案例_选择题案例.handler;
 
+import org.apache.commons.lang3.ArrayUtils;
+
 import 案例_选择题案例.answer.Answer;
 import 案例_选择题案例.answer.ChoiceAnswer;
 import 案例_选择题案例.check.Check;
-import 案例_选择题案例.question.ChoiceQuestion;
+import 案例_选择题案例.constant.Constant;
+import 案例_选择题案例.question.MultiQuestion;
 import 案例_选择题案例.question.Question;
-import 案例_选择题案例.question.support.Option;
+import 案例_选择题案例.question.SingleQuestion;
 
-public class ChoiceQuestionHandler implements Check{
-	
-	
+public class ChoiceQuestionHandler implements Check {
 
 	@Override
-	public boolean doCheck(Question question, Answer answer) {
-		
-		return false;
-	}
+	public int check(Question question, Answer answer) {
 
-	// 检查答案...
-	public void doCheck(ChoiceQuestion[] questions, ChoiceAnswer[] answers) {
+		ChoiceAnswer choiceAnswer = (ChoiceAnswer) answer;
 
-		System.out.println("测评结果为 : ");
+		boolean flag = false;
 
-		String result = "";
+		if (question instanceof SingleQuestion) {
+			SingleQuestion single = (SingleQuestion) question;
+			flag = single.getAnswer() == choiceAnswer.getChoice()[0];
 
-		for (int i = 0; i < questions.length; i++) {
+		} else if ( question instanceof MultiQuestion ) {
+			MultiQuestion multi = (MultiQuestion) question;
+			
+			
+			if (choiceAnswer.getChoice() != null && choiceAnswer.getChoice().length == multi.getAnswer().length) { // 答案的个数和正确答案的个数 要匹配
 
-			if (questions[i].check(answers[i].getChoice())) {  //答案是 Answer 类  , 内容在  此类的数组里 
+				for (int i = 0; i <  multi.getAnswer().length ; i++) {//用每个正确答案去比较 用户选择的答案
 
-				result = "题" + (i + 1) + " : √ ";
-			} else {
-				result = "题" + (i + 1) + " : × ";
-			}
+					flag = ArrayUtils.contains(choiceAnswer.getChoice(), multi.getAnswer()[i]); //一旦发现有一个错误 , flag 会 变成 false ; 
 
-			System.out.println(result);
-		}
-
-	}
-
-	// 显示题目..
-	public void showQuestion(ChoiceQuestion[] questions) {
-
-		if (questions != null && questions.length > 0) { // 不为空在循环 , 以防 空指针异常  NullPointException
-			for (int i = 0; i < questions.length; i++) {
-
-				System.out.println("题目 " + (i + 1) + " : " + questions[i].getTitle());
-				for (Option option : questions[i].getOptions()) {
-					System.out.println(option.getKey() + " . " + option.getText());
+					if (!flag) break;
 				}
-				System.out.println("***************************");
 
-			}
+			} 
 		}
-
+		
+		if(flag) return Constant.CHOICE_SCORE;
+		else return 0;
 	}
 
 

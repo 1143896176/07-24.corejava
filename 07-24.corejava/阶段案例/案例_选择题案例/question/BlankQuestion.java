@@ -1,10 +1,11 @@
 package 案例_选择题案例.question;
 
-public class FillBlankQuestion {
+public class BlankQuestion extends Question {
 	
 	protected String[] answer;
 	
-	public FillBlankQuestion(String... answer) {
+	public BlankQuestion(String title , String... answer) {
+		super(title);
 		this.answer = answer;
 	}
 
