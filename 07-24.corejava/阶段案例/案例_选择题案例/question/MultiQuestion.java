@@ -1,6 +1,8 @@
-package 案例_选择题案例;
+package 案例_选择题案例.question;
 
 import org.apache.commons.lang3.ArrayUtils;
+
+import 案例_选择题案例.question.support.Option;
 
 public class MultiQuestion extends ChoiceQuestion {
 

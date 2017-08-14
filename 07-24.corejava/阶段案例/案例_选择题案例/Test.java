@@ -1,5 +1,12 @@
 package 案例_选择题案例;
 
+import 案例_选择题案例.answer.Answer;
+import 案例_选择题案例.answer.ChoiceAnswer;
+import 案例_选择题案例.question.ChoiceQuestion;
+import 案例_选择题案例.question.MultiQuestion;
+import 案例_选择题案例.question.SingleQuestion;
+import 案例_选择题案例.question.support.Option;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -17,8 +24,6 @@ public class Test {
 		char singleAnswer = 'D';
 
 		ChoiceQuestion s1 = new SingleQuestion(t1, sOptions , 0, singleAnswer);
-		
-		System.out.println( s1 instanceof MultiQuestion);
 		
 		////////////////////////////////////////////	//第一题  构造完成
 
@@ -40,20 +45,20 @@ public class Test {
 
 		///////////
 		// 答案
-		Answer answer1 = new Answer(new char[] {'D'});
-		Answer answer2 = new Answer(new char[] {'B' , 'A' , 'C'});
+		Answer answer1 = new ChoiceAnswer(new char[] {'D'});
+		Answer answer2 = new ChoiceAnswer(new char[] {'B' , 'A' , 'C'});
 		Answer[] answers = {answer1 , answer2 };
 		
 
 		/////////////////////
 		// 显示题目
-		QuestionHandler handler = new QuestionHandler();
-		handler.showQuestion(questions);
+//		QuestionHandler handler = new QuestionHandler();
+//		handler.showQuestion(questions);
 
 		/////////////////////
 
 //		System.out.println("检测结果");
-		handler.doChoiceCheck(questions, answers);
+//		handler.doChoiceCheck(questions, answers);
 
 	}
 

@@ -1,9 +1,24 @@
-package 案例_选择题案例;
+package 案例_选择题案例.handler;
 
-public class QuestionHandler {
+import 案例_选择题案例.answer.Answer;
+import 案例_选择题案例.answer.ChoiceAnswer;
+import 案例_选择题案例.check.Check;
+import 案例_选择题案例.question.ChoiceQuestion;
+import 案例_选择题案例.question.Question;
+import 案例_选择题案例.question.support.Option;
+
+public class ChoiceQuestionHandler implements Check{
+	
+	
+
+	@Override
+	public boolean doCheck(Question question, Answer answer) {
+		
+		return false;
+	}
 
 	// 检查答案...
-	public void doChoiceCheck(ChoiceQuestion[] questions, Answer[] answers) {
+	public void doCheck(ChoiceQuestion[] questions, ChoiceAnswer[] answers) {
 
 		System.out.println("测评结果为 : ");
 
@@ -39,5 +54,6 @@ public class QuestionHandler {
 		}
 
 	}
+
 
 }

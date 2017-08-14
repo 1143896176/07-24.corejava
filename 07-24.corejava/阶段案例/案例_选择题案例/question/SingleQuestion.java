@@ -1,4 +1,6 @@
-package 案例_选择题案例;
+package 案例_选择题案例.question;
+
+import 案例_选择题案例.question.support.Option;
 
 public class SingleQuestion extends ChoiceQuestion {
 	
