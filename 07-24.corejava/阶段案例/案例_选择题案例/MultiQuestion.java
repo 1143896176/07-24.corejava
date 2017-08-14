@@ -2,12 +2,10 @@ package 案例_选择题案例;
 
 import org.apache.commons.lang3.ArrayUtils;
 
-public class MultiQuestion extends Question {
+public class MultiQuestion extends ChoiceQuestion {
 
 	public char[] answer; // 正确答案
 
-	public MultiQuestion() {
-	}
 
 	public MultiQuestion(String title, Option[] options, int type, char[] answer) {
 		super(title, options, type);

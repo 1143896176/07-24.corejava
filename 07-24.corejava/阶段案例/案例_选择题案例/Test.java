@@ -16,10 +16,11 @@ public class Test {
 		//代表  此题的正确答案是 D
 		char singleAnswer = 'D';
 
-		//第一题  构造完成
-		Question s1 = new SingleQuestion(t1, sOptions , 0, singleAnswer);
-
-		////////////////////////////////////////////
+		ChoiceQuestion s1 = new SingleQuestion(t1, sOptions , 0, singleAnswer);
+		
+		System.out.println( s1 instanceof MultiQuestion);
+		
+		////////////////////////////////////////////	//第一题  构造完成
 
 		String t2 = "关于 集合 以下说法正确的是? ";
 
@@ -32,10 +33,10 @@ public class Test {
 		char[] multiAnswer = { 'A', 'B' };
 
 		//多选题构造完毕
-		Question m1 = new MultiQuestion(t2, mOptions , 1 , multiAnswer);
+		ChoiceQuestion m1 = new MultiQuestion(t2, mOptions , 1 , multiAnswer);
 
 		/////////////// 题目
-		Question[] questions = { s1, m1 };
+		ChoiceQuestion[] questions = { s1, m1 };
 
 		///////////
 		// 答案
@@ -52,7 +53,7 @@ public class Test {
 		/////////////////////
 
 //		System.out.println("检测结果");
-		handler.doCheck(questions, answers);
+		handler.doChoiceCheck(questions, answers);
 
 	}
 

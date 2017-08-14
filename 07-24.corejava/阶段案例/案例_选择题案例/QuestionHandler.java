@@ -3,7 +3,7 @@ package 案例_选择题案例;
 public class QuestionHandler {
 
 	// 检查答案...
-	public void doCheck(Question[] questions, Answer[] answers) {
+	public void doChoiceCheck(ChoiceQuestion[] questions, Answer[] answers) {
 
 		System.out.println("测评结果为 : ");
 
@@ -24,7 +24,7 @@ public class QuestionHandler {
 	}
 
 	// 显示题目..
-	public void showQuestion(Question[] questions) {
+	public void showQuestion(ChoiceQuestion[] questions) {
 
 		if (questions != null && questions.length > 0) { // 不为空在循环 , 以防 空指针异常  NullPointException
 			for (int i = 0; i < questions.length; i++) {

@@ -1,6 +1,6 @@
 package 案例_选择题案例;
 
-public class SingleQuestion extends Question {
+public class SingleQuestion extends ChoiceQuestion {
 	
 	public char answer; //正确答案
 	
