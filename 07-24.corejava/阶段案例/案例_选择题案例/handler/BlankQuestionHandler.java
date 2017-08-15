@@ -19,7 +19,7 @@ public class BlankQuestionHandler implements Check {
 		
 		int score = 0;
 		
-		if(blankAnswer.getContents()!=null && blankAnswer.getContents().length > 0 ) {
+		if(blankAnswer.getContents()!=null && blankAnswer.getContents().length > 0 ) { //说明   填空题  答题者 写了答案
 			for (int i = 0; i < blankAnswer.getContents().length; i++) {
 				if( ArrayUtils.contains(blankQuestion.getAnswer(),  blankAnswer.getContents()[i]) ) {
 					score += Constant.BLANK_SCORE;

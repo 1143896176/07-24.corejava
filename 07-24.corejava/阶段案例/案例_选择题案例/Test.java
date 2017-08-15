@@ -68,12 +68,13 @@ public class Test {
 		Answer[] answers = {answer1 , answer2 , answer3 , answer4};
 		
 
-		
+		//试卷初始化
 		InvokeService invoke = new InvokeService();
 		invoke.init(questions);
 		
 		System.out.println(" \n开始判卷\n  ");
 		
+		//调用判卷的 Service
 		CheckService check = new CheckService(questions , answers);
 		
 		check.mark();
