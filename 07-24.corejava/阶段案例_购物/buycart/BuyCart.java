@@ -13,8 +13,7 @@ public class BuyCart {
 	public void setItems(Item[] items) {
 		this.items = items;
 	}
-
-	//
+	
 	public void handler() {
 		for (int i = 0; i < items.length-1; i++) {
 			if(items[i].equals(items[i+1])) {
@@ -26,6 +25,7 @@ public class BuyCart {
 		}
 	}
 
+	//ÏÔÊ¾¹ºÎï³µ
 	public void showBuyCart() {
 
 		for (Item item : items) {

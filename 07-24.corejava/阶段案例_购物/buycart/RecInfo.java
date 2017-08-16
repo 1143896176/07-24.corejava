@@ -54,7 +54,7 @@ public class RecInfo {
 
 	@Override
 	public String toString() {
-		return "RecInfo [id=" + id + ", addr=" + addr + ", recName=" + recName + ", isDefault=" + isDefault + "]";
+		return "收货信息 [id=" + id + ", addr=" + addr + ", recName=" + recName + ", isDefault=" + isDefault + "]";
 	}
 
 	
