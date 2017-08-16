@@ -54,9 +54,7 @@ public class Orders {
 
 	@Override
 	public String toString() {
-		
-		
-		
+
 		String msg = "----------订单信息 : ----------\n";
 		
 		msg+= "订单编号 : " + oid+"\n";

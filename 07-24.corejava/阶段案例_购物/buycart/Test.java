@@ -45,7 +45,7 @@ public class Test {
 		long time = System.currentTimeMillis(); //获取当前时间的 long 值 , 注 : [ 时间是可以用 long 来描述的 ]
 		Date now = new Date(); // 获取当前系统时间
 
-		//String.valueOf(time)   代表  讲任意基本数据类转换为 字符串 , 此处是 将 long 转换为 String 
+		//String.valueOf(time)   代表  将任意基本数据类型 转换为 字符串 , 此处是 将 long 转换为 String 
 		Orders order = new Orders( String.valueOf(time) , now , rec1 , cart  );  
 		System.out.println(order);
 		
