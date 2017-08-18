@@ -23,14 +23,12 @@ public class Test {
 		Item item02 = new Item(p2 , 6 );
 		Item item03 = new Item(p2 , 1);
 		
-		Item[] items = { item01 , item02 , item03};
-		
 		BuyCart cart = new BuyCart();
 		
-		cart.setItems(items);
-		
-		//做处理  , 　多余的让其加数量　　　减少项
-		cart.handler();
+		cart.addItem(item01);
+		cart.addItem(item02);
+		cart.addItem(item03);
+
 		
 		//////////////////////
 		//查看购物车
