@@ -17,6 +17,7 @@
 	<classpathentry kind="src" path="阶段案例_购物"/>
 	<classpathentry kind="src" path="包装类"/>
 	<classpathentry kind="src" path="异常_Exception"/>
+	<classpathentry kind="src" path="集合"/>
 	<classpathentry kind="lib" path="lib/commons-lang3-3.6.jar" sourcepath="C:/07.24-file/01.工具/commons-lang3-3.6-sources.jar">
 		<attributes>
 			<attribute name="source_encoding" value="UTF-8"/>
