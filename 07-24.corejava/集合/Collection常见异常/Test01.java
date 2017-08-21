@@ -1,4 +1,4 @@
-package 集合常用API;
+package Collection常见异常;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +18,7 @@ public class Test01 {
 		strs.add("c");
 		strs.add("d");
 		
-		Object[] strs2 = strs.toArray();
+		Object[] strs2 = strs.toArray(); // ClassCastException
 		System.out.println(ArrayUtils.toString(strs2));
 		
 

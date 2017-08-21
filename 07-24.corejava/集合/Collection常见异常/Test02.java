@@ -1,4 +1,4 @@
-package 集合常用API;
+package Collection常见异常;
 
 import java.util.Arrays;
 import java.util.List;
