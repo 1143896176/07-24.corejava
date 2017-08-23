@@ -1,4 +1,4 @@
-package singleton;
+package 建造模式.singleton;
 
 public class Test {
 
