@@ -9,7 +9,7 @@ public class Client {
 		
 		i8 = factory.factory();
 		
-		
+		System.out.println(i8);
 
 	}
 
