@@ -5,7 +5,7 @@ public class Boil implements Runnable {
 	@Override
 	public void run() {
 
-		System.out.println("开始烧水");
+		System.out.println(Thread.currentThread().getName() + "开始烧水");
 
 		try {
 			Thread.sleep(10 * 1000);

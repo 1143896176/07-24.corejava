@@ -5,7 +5,7 @@ public class Wash extends Thread {
 	@Override
 	public void run() {
 		for (int i = 1; i <= 5; i++) {
-			System.out.println("开始洗第" + i + "　个茶杯");
+			System.out.println(Thread.currentThread().getName() + "开始洗第" + i + "　个茶杯");
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
