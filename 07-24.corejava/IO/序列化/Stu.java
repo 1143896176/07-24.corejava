@@ -2,8 +2,10 @@ package 序列化;
 
 public class Stu implements java.io.Serializable { //不实现  就没法 被 序列化
 
+	private static final long serialVersionUID = 8918676416282216936L;
+	
 	private int id;
-	private String name;
+	private transient String name;
 
 	public int getId() {
 		return id;
