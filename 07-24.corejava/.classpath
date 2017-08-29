@@ -21,6 +21,8 @@
 	<classpathentry kind="src" path="设计模式"/>
 	<classpathentry kind="src" path="IO"/>
 	<classpathentry kind="src" path="多线程"/>
+	<classpathentry kind="src" path="试题测试"/>
+	<classpathentry kind="src" path="套接字"/>
 	<classpathentry kind="lib" path="lib/commons-lang3-3.6.jar" sourcepath="C:/07.24-file/01.工具/commons-lang3-3.6-sources.jar">
 		<attributes>
 			<attribute name="source_encoding" value="UTF-8"/>

@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
 
-public class Test {
+public class Test { 
 
 	public static void main(String[] args) throws Exception {
 		
